@@ -1,0 +1,12 @@
+name: Required Check
+
+on:
+  pull_request: {}
+
+jobs:
+  required-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sleep
+        run: sleep 60
