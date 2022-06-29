@@ -1,0 +1,17 @@
+name: Enable Automerge
+
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  enable-automerge:
+    runs-on: ubuntu-latest
+
+    if: github.event.label.name == 'automerge'
+    steps:
+      - name: Enable Automerge
+        uses: alexwilson/enable-github-automerge-action@main
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
